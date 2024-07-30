@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelector('.nav-items');
     const contactBar = document.querySelector('.contact-bar');
     const nav = document.querySelector('.nav');
-    
+
 
     navToggle.addEventListener('click', () => {
         navItems.classList.toggle('active');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-target'), 10);
         let count = 0;
-        const increment = Math.ceil(target / 100); 
+        const increment = Math.ceil(target / 100);
 
         const interval = setInterval(() => {
             count += increment;
@@ -77,19 +77,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Resetting the counter
                 counter.textContent = '0+';
                 animateCounter(counter);
-                observer.unobserve(counter); 
+                observer.unobserve(counter);
             }
         });
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.5 
+        threshold: 0.5
     });
 
     counters.forEach(counter => {
         const target = parseInt(counter.textContent, 10);
         counter.setAttribute('data-target', target);
-        counter.textContent = '0+'; 
+        counter.textContent = '0+';
         observer.observe(counter);
     });
 });
@@ -149,4 +149,6 @@ function showSlides2(n) {
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides2, 3000)
 }
+
+
 
